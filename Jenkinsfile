@@ -16,10 +16,10 @@ pipeline
 
     stages
      { 
-        stage('Download project') {
-            steps {
-          checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GITHUB_SR', url: 'https://github.com/ShubhamRasal/simple-chat-bot.git']]]            }
-        }
+        // stage('Download project') {
+        //     steps {
+        //   checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GITHUB_SR', url: 'https://github.com/ShubhamRasal/simple-chat-bot.git']]]            }
+        // }
         stage('Init') {
             steps {
                 script {
