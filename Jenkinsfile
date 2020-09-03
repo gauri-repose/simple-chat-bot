@@ -1,5 +1,5 @@
 def shouldBuild = false
-def replace_file_folder "MYANDROID"
+def replace_file_folder="MYANDROID"
 def branch_name = ""
 pipeline 
 {
