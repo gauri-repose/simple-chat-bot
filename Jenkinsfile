@@ -16,10 +16,10 @@ pipeline
 
     stages
      { 
-        // stage('Download project') {
-        //     steps {
-        //   checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GITHUB_SR', url: 'https://github.com/ShubhamRasal/DevOps-Practice.git']]]            }
-        // }
+        stage('Download project') {
+            steps {
+          checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GITHUB_SR', url: 'https://github.com/ShubhamRasal/simple-chat-bot.git']]]            }
+        }
         stage('Init') {
             steps {
                 script {
@@ -53,24 +53,31 @@ pipeline
         // }
     
         stage('check branch') {
-            when {
-               //branch 'staging'
-                expression {
-                    return env.shouldBuild != "false" 
-                }
-                stpes{
-                    script{
-                        if("${env.BRANCH_NAME}" == "master"){
-                            echo "This is master branch"
-                        }
+            steps {
+                script {
+                    branch_name = "${env.BRANCH_NAME}"
+                   // echo branch_name
+                    if(branch_name == "master"){
+                           echo branch_name
+                        
+                    }else if(branch_name == "dev"){
+                       
+                          echo branch_name  
+                    }else if(branch_name == "staging"){
+                        
+                           echo branch_name
+                    }else if(branch_name == "null"){
+                        
+                        echo branch_name
                     }
                 }
+            }//step end
             }
             
         
     }//stage end
 }
-}
+
 def slack_send(slackMessage,channel="jenkins",messageColor="good")
 {
     slackSend channel: channel , color: messageColor, message: slackMessage
