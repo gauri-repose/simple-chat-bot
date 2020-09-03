@@ -60,7 +60,7 @@ pipeline
                 }
                 stpes{
                     script{
-                        if(${env.BRANCH_NAME} == "master"){
+                        if("${env.BRANCH_NAME}" == "master"){
                             echo "This is master branch"
                         }
                     }
