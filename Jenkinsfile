@@ -70,7 +70,7 @@ pipeline
         
     }//stage end
 }
-
+}
 def slack_send(slackMessage,channel="jenkins",messageColor="good")
 {
     slackSend channel: channel , color: messageColor, message: slackMessage
