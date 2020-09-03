@@ -56,7 +56,7 @@ pipeline
             steps {
                 script {
                     branch_name = "${env.BRANCH_NAME}"
-                    echo branch_name
+                    echo branch_name 
                     if(branch_name == "master"){
                            echo branch_name
                         
