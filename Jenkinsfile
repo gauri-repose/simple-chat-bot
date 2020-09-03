@@ -58,8 +58,8 @@ pipeline
                     branch_name = "${env.BRANCH_NAME}"
                     echo branch_name 
                     if(branch_name == "master"){
-                           echo branch_name
-                        withEnv(["APP_ID=FOOBAR"]) { 
+                           echo branch_name 
+                        withEnv(["APP_ID= credentials('FB_DEVOPS_APP_ID')"]) { 
                                 echo "APP_ID = ${env.APP_ID}"
                         }
                     }else if(branch_name == "dev"){
