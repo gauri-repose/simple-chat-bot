@@ -53,9 +53,6 @@ pipeline
         // }
     
         stage('check branch') {
-            environment{
-                
-            }
             steps {
                 script {
                     branch_name = "${env.BRANCH_NAME}"
