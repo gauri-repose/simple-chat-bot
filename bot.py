@@ -3,7 +3,7 @@ import sys
 import speech_recognition as sr
 import wikipedia 
 import pyttsx3 as tts
-
+ 
 r = sr.Recognizer()
 verbs = {'run','open','send',"sign in"}
 software_app = {'Chrome','Notepad', 'Zoom' , 'code','telegram','vlc' }
