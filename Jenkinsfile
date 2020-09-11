@@ -1,4 +1,4 @@
-
+dev shouldBuild = false
 pipeline 
 {
    agent any
@@ -21,8 +21,10 @@ pipeline
          }
             steps {
                 echo "${env.BRANCH_NAME}"
-               env.shouldBuild = false
-            }//step end
+               script{
+                 env.shouldBuild = false
+               }
+             }//step end
        }//check branch
         
         stage('second')
