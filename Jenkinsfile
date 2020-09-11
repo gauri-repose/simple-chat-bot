@@ -9,16 +9,7 @@ pipeline
      { 
    
       stage('check branch') {
-         when{
-            not{
-               anyOf{
-                  branch 'master'
-                  branch 'staging'
-                  branch 'development'
-               }
-            }
-            
-         }
+
             steps {
                 echo "${env.BRANCH_NAME}"
                script{
