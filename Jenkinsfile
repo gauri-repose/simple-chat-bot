@@ -11,7 +11,7 @@ pipeline
       stage('check branch') {
          when{
             not{
-               anyof{
+               anyOf{
                   branch 'master'
                   branch 'staging'
                   branch 'development'
