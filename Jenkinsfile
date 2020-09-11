@@ -1,4 +1,4 @@
-dev shouldBuild = false
+def shouldBuild = false
 pipeline 
 {
    agent any
