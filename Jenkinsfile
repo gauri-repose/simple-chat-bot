@@ -34,6 +34,10 @@ pipeline
                         return env.shouldBuild != "false"
                     }
             }//when
+           steps{
+           echo "inside second step"
+           }
+           
         }
             
         
